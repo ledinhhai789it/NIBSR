@@ -1,0 +1,28 @@
+[package]
+name = "nibsr"
+version = "0.2.0"
+edition = "2021"
+description = "Research prototype for Non-Interactive Revocable Blind Signatures (NIBSR) with an SPS-EQ NIBS backend"
+license = "MIT OR Apache-2.0"
+repository = "https://example.invalid/nibsr"
+
+[dependencies]
+ark-bls12-381 = "0.4"
+ark-ec = "0.4"
+ark-ff = "0.4"
+ark-serialize = "0.4"
+ark-std = { version = "0.4", features = ["std"] }
+rand = "0.8"
+sha2 = "0.10"
+hex = "0.4"
+serde = { version = "1", features = ["derive"] }
+thiserror = "1"
+clap = { version = "4", features = ["derive"] }
+
+[lib]
+name = "nibsr"
+path = "src/lib.rs"
+
+[[bin]]
+name = "nibsr-demo"
+path = "src/bin/demo.rs"
